@@ -1,6 +1,10 @@
 <template>
   <div class="item">
-    <i>
+    <i
+      :class="{ hovered: isHovered }"
+      @mouseover="isHovered = true"
+      @mouseleave="isHovered = false"
+    >
       <slot name="icon"></slot>
     </i>
     <div class="details">
@@ -11,6 +15,16 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      isHovered: false, // Tracks the hover state
+    };
+  },
+};
+</script>
 
 <style scoped>
 .item {
@@ -30,8 +44,16 @@ i {
   place-content: center;
   width: 32px;
   height: 32px;
-
   color: var(--color-text);
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+i.hovered {
+  transform: scale(1.2); /* Enlarges the icon slightly */
+  background-color: var(--color-highlight); /* Add a background color */
+  color: var(--color-text-hover); /* Change text color */
+  background-color: #52645c;
+  border-radius: 8px;
 }
 
 h3 {
