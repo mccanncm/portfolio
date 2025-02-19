@@ -5,6 +5,8 @@ import ToolingIcon from './icons/IconTooling.vue'
 import EcosystemIcon from './icons/IconEcosystem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
 import SupportIcon from './icons/IconSupport.vue'
+import AboutMe from './AboutMe.vue'
+import Experience from './Experience.vue'
 
 const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
 </script>
@@ -15,6 +17,9 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
       <DocumentationIcon />
     </template>
     <template #heading>About Me</template>
+    <template #content>
+      <AboutMe />
+    </template>
   </WelcomeItem>
 
   <WelcomeItem>
@@ -22,6 +27,7 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
       <ToolingIcon />
     </template>
     <template #heading>Professional Experience</template>
+    <template #content><Experience /></template>
   </WelcomeItem>
 
   <WelcomeItem>
